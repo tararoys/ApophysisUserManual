@@ -1,0 +1,52 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>How Weights Work: The Chaos Game</title><link rel="stylesheet" href="apousermanual.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.html" title="Apophysis User Manual"><link rel="up" href="ch05.html" title="Chapter 5.  How Fractals Are Shaded: An Introduction to Weights and Noise"><link rel="prev" href="ch05s03.html" title="Unbalanced Weights (And Why They Cause Noise)"><link rel="next" href="ch06.html" title="Chapter 6.  How To Design Your Own Fractals: An OVerview of Linear Fractals"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">How Weights Work: The Chaos Game</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch05s03.html">Prev</a> </td><th width="60%" align="center">Chapter 5. 
+How Fractals Are Shaded: An Introduction to Weights and Noise </th><td width="20%" align="right"> <a accesskey="n" href="ch06.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id2804493"></a>How Weights Work: The Chaos Game</h2></div></div></div><p>
+So, that's what weights do.  But how do they do it?  And why does it create that noise that sometimes, annoyingly, gets into your fractals?  Those are interesting questions, and the answer is something called the Chaos Game.  </p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id2804506"></a>Multiple Copy Reduction Machine Method of Making Fractals</h3></div></div></div><p> 
+</p><div class="mediaobject"><img src="weights/images/btriangle1.jpg"></div><p>
+
+</p><div class="mediaobject"><img src="weights/images/btriangle2.jpg"></div><p>
+
+</p><div class="mediaobject"><img src="weights/images/btriangle3.jpg"></div><p>
+
+</p><div class="mediaobject"><img src="weights/images/btriangle4.jpg"></div><p>
+
+</p><div class="mediaobject"><img src="weights/images/btriangle5.jpg"></div><p>
+</p><p>
+Before we get into them, I have a bit of a confession to make.  When I told you in that Apophysis fractals are made with Multiple Copy Reduction Machines, I lied.  Take this Barnsley's fern, for example.  Barnsley's fern takes four transforms in the first iteration, right?  In the second iteration, it would consist of 16 triangles.  Creating the fractal Barnsley's fern that we all know and love would take several thousand iterations.  Since the number of triangles is multiplied by four on every iteration, the final version would have four to the several thousandth power triangles.  In other words, it would take your desktop computer several million years to calculate a triangle-based version of Barnsley's fern.  You don't really want to hang around that long just for a fractal.  </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id2804590"></a>The Chaos Game Method of Making Fractals</h3></div></div></div><p>
+However, I didn't entirely lie.  MRCM is a very useful way for visualizing how fractals are made.  Apophysis's transform editor likes to pretend that Apophysis uses MRCM, which is why I told you about it.  However, Apophysis really uses the chaos game to generate its fractals, which is faster than MRCM by several million years.   Unfortunately, it also tends to generate noise. </p><p>
+So what exactly is the Chaos game?  Let's play it, and find out.  </p><p>
+
+</p><div class="mediaobject"><img src="weights/images/die.jpg"></div><p>
+
+</p><div class="mediaobject"><img src="weights/images/chaosgamestart.jpg"></div><p>
+</p><p>
+Start with three points, arranged in a triangle.  Mark them 1, 2, and 3.   Get a six sided die, and pretend it is a three-sided die.  What I mean is, numbers 1 and 4 will correspond with dot 1, numbers 2 and 5 will correspond with dot 2, and numbers 3 and 6 will correspond with dot 6.  OK, so those are the pieces we need for our game.  Now, we need some rules!  There is actually only one rule in this game.  Roll the die.  Whatever number comes up, put a dot exactly halfway between that point and the point you are currently on.  Do this about five times.</p><p>
+(Note- I don't recommend playing this game in real life.  It would be long and very boring.  Computers, however, play it very fast and very well.)  </p><p>
+ 
+</p><div class="mediaobject"><img src="weights/images/chaosgame1.jpg"></div><p>
+</p><p>
+So, what happens after the first few steps?  Nothing very interesting. It's just a random set of dots. Note the line- the line wouldn't really be there.  I just put it to show in what order I put down the dots.  I started at the three point and went from there.  </p><p>
+How about more steps?  Let's take away the line and show, say, a hundred steps.  How about a thousand?  10 thousand?  </p><p>
+
+</p><div class="mediaobject"><img src="weights/images/chaosgame2.jpg"></div><p>
+
+</p><div class="mediaobject"><img src="weights/images/chaosgame3.jpg"></div><p>
+
+</p><div class="mediaobject"><img src="weights/images/chaosgame4.jpg"></div><p>
+</p><p>
+Hey, I know that shape!  It's Sierpinski's gasket!  </p><p>
+Wow.  In 10 thousand steps of the chaos game, we got Sierpinski's gasket!  All we did was move a single point around- something a computer can do in seconds.  In fact, a computer can run ten thousand iterations of the chaos game in seconds.  So, ladies and gentlemen, this is the chaos game.    </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id2804741"></a>The Chaos Game and Weights</h3></div></div></div><p>
+So what the heck does it have to do with weights?  </p><p>
+
+</p><div class="mediaobject"><img src="weights/images/die1.jpg"></div><p>
+
+</p><div class="mediaobject"><img src="weights/images/weightpic6.jpg"></div><p>
+</p><p>
+Well, you can make your die cheat.  Say you stuck a penny on the three face of your die.  The die would land on three a lot more often than it would land on one or two.  Thus, the fractal will have a lot more points clustered around the lower right-hand triangle.  If all the weights are even, then the die is fair, and so all of corners of the fractal have an equal chance of being chosen. The points are distributed evenly across the fractal.  </p><p>
+That's why transforms with small weights compared to others end up looking grainy and pixilated- not that many points are getting out there to their dot, so the fractal doesn't fill up.  </p><p>
+
+</p><div class="mediaobject"><img src="weights/images/weightpic53.jpg"></div><p>
+
+</p><div class="mediaobject"><img src="weights/images/color23.jpg"></div><p>
+</p><p>
+So, if you have a very noisy fractal, play with the weights and see if you can get the noise to disappear.  Wildly varying weights lead to pixilated fractal like the one above on the left.  Balanced weights lead to smooth, less noisy fractals, like the one on the right.  This, of course, is not the only reason there is noise in the fractal.  But I shall leave that to another tutorial.  Until next time, have fun! </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch05s03.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch05.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch06.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Unbalanced Weights (And Why They Cause Noise) </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 6. 
+ How To Design Your Own Fractals: An OVerview of Linear Fractals</td></tr></table></div></body></html>

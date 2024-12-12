@@ -1,0 +1,174 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Advanced Animation</title><link rel="stylesheet" href="apousermanual.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.html" title="Apophysis User Manual"><link rel="up" href="ch11.html" title="Chapter 11. Scripting and Animation"><link rel="prev" href="ch11s02.html" title="Your First Script"><link rel="next" href="ch12.html" title="Chapter 12. Apophysis, Fractals, and Copyright FAQ"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Advanced Animation</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch11s02.html">Prev</a> </td><th width="60%" align="center">Chapter 11. Scripting and Animation</th><td width="20%" align="right"> <a accesskey="n" href="ch12.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id2813311"></a>Advanced Animation</h2></div></div></div><p> What if you really like this animation?   Say you scripted an animation, and you really, really wan to render it, and turn it into a movie.  How would you go about doing this?  Apophysis doesn't make it easy, but it is possible, by using an animation script, like the one below.  </p><code class="code">
+<pre class="screen"> 
+
+{You can just copy and paste this script as-is into your editor.  All
+of the explanations are commented out.  Have fun! :)} 
+ 
+
+ 
+
+wi := 500  //this sets a variable equal to 500 
+ 
+he := 375  //this sets a variable equal to 375 
+ 
+
+ 
+Renderer.Width := wi;  //this tells the renderer what width to render the images 
+ 
+Renderer.Height := he;  //this tells the renderer what height to render the images 
+ 
+SetRenderBounds;       //this, I think, tells the renderer to set the heigth and width. 
+ 
+
+ 
+Flame.SampleDensity := 1; // 1 for preview, 300 for rendering. This determines quality of the image. 
+ 
+Flame.Oversample := 16; // 16 works well.  I don't know what it means. 
+ 
+Flame.FilterRadius := 1; //  I don't know what this means either.  
+ 
+
+ 
+// This tells the renderer to render 100 frames of animation.
+ 
+// If you want it to render less or more frames, change 99 to a different number.
+ 
+for j := 0 to 99 do
+ 
+ 
+ 
+begin
+ 
+
+ 
+//This stuff tells apophysis how to animate the fractal.
+ 
+SetActiveTransform(1);
+ 
+  Rotate(-10);
+ 
+  SetActiveTransform(3);
+ 
+  Rotate(-60);
+ 
+  SetActiveTransform(4);
+ 
+  Rotate(-1);
+ 
+
+ 
+{This tells apophysis where to put the render once it is done.
+This script puts them in a file called C:\renders.  It also names the files 0 through 99, and makes them jpgs.  Apophysis does not render actual animations.  It renders sequences of images that you  can put together into a movie in another program.  If you don't want to actually render the images, comment these two lines out, and just watch the animation.}
+ 
+
+ 
+//Renderer.Filename := 'C:\renders\' + Format('%.6d', [j]) + '.jpg';
+ 
+//Render;
+ 
+
+ 
+//This shows what the image looks like after the script has run once.
+ 
+//if you just want to render the fractal instead of watch it move, comment this line out.
+ 
+
+ 
+preview;
+ 
+
+ 
+
+print ('image j' +FloatToStr(j)) //This prints a status message to your editor.   
+ 
+
+ 
+end;
+ 
+</pre>
+
+ 
+</code><p> So, fear not.  I shall explain what the script means.  </p><p>Let's start from the top.   </p><code class="code">
+<pre class="screen">
+wi := 500  //this sets a variable equal to 500 
+ 
+
+he := 375  //this sets a variable equal to 375 
+ 
+</pre>
+</code><p> These two are called variables.  They are currently set equal to the numbers 500 and 375.  So, whenever you see these variables in the script, you know that they mean 500 and 375.</p><code class="code"> 
+<pre class="screen">
+Renderer.Width := wi;  //this tells the renderer what width to render the images 
+ 
+Renderer.Height := he;  //this tells the renderer what height to render the images  
+ 
+SetRenderBounds;       //this tells the renderer to set the heigth and width. 
+ 
+</pre>
+
+</code><p> All right.  Renderer.Width tells the Apophysis to render an image 500 pixels wide.  Renderer.Height  tells Apophysis to render an image 375 pixels tall.  
+SetRenderBounds tells Apophyis to pay attention to the values of Render.Width and Render.Height.  
+</p><code class="code"> 
+<pre class="screen">
+Flame.SampleDensity := 1; // 1 for preview, 300 for rendering. This determines quality of the image.
+Flame.Oversample := 16; // 16 works well.  I don't know what it means.
+Flame.FilterRadius := 1; //  I don't know what this means either.
+</pre>
+</code><p> The Flame.SampleDensity tells Apophysis at what quality to render the animation.  A low sample density means that the render will be very grainy and poor quality.  A high sample density makes the quality much better, but slows down render time.  A sample density of 1 is good for doing preview animations, but make sure to set the sample density to 300 when you want to render a high-quality animation.  </p><p>As for Flame.Oversample and Flame.FilterRadius, I have no idea what they do.  All I know is that setting them higher leads to a better render and a longer rendering time.  I just leave them on their default settings.   </p><p> So that's it for all of the rendering settings.  Now we can get on to the actual animation part.  </p><code class="code"> 
+<pre class="screen">
+// This tells the renderer to render 100 frames of animation.
+ 
+// If you want it to render less or more frames, change 99 to a different number. 
+ 
+for j := 0 to 359 do 
+ 
+begin 
+.
+//some code here 
+ 
+
+ 
+end; 
+ 
+</pre>
+</code><p> This is called a for loop.  It is almost exactly like a while loop, except that instead of running until stopped, it starts at some number and ends at some number.  This for loop starts at 0 and ends at 359, meaning that it executes 100 times before stopping.  This particular for loop has code inside of it that will tell Apophysis to render a frame.  Every time the for loop is run, Apophysis will render one flame, leaving you, at the end of the for loop, with 360 renders of a fractal.   Got that?  Good.  If you want to have an animation longer or shorter, change 99 to a different number, like 3 or 200.  The larger the number, the more flames Apophysis has to render, and the longer your animation will take to make.  </p><code class="code">
+<pre class="screen">
+
+  
+SetActiveTransform(1);
+ 
+  Rotate(-10);
+ 
+  SetActiveTransform(3);
+ 
+  Rotate(-60);
+ 
+  SetActiveTransform(4);
+ 
+  Rotate(-1);
+</pre>
+</code><p> So.  Let's talk about the stuff inside the for loop.  First comes the animation.  Remember the stuff we scripted in our simple script above?  We'll use exactly the same code to animate our fractal.  Simply copy and paste it here, below the begin.  If you want to animate some other fractal, simply change this code.   </p><code class="code">
+<pre class="screen">
+
+ 
+{This tells apophysis where to put the render once it is done.
+This script puts them in a file called C:\renders.  It also names the files 0 through 99, and makes them jpgs.  Apophysis does not render actual animations.  It renders sequences of images that you  can put together into a movie in another program.  If you don't want to actually render the images, comment these two lines out, and just watch the animation.}
+
+ 
+
+ 
+//Renderer.Filename := 'C:\renders\' + Format('%.6d', [j]) + '.jpg';
+ 
+//Render; 
+ 
+</pre>
+</code><p> These two lines are what actually renders the fractals.  The first is one of the most important.  Renderer.Filename  tells Apophysis where to put the fractal after it is done.  This script puts the fractal in a folder called C:\renders\.  In order for the script to work, this folder must exist!  You can change the folder name to put the flame in whatever folder you want.  The Format('%.6d', [j]) is an intricate little command that tells Apophysis to print out a 6 digit number that corresponds to the j value that is currently in the for loop.  For example, if j equals zero, this format will print out 000000.  If j is one, it will print out 000001.  If j is 99, it will print out 000099.  The jpg tells apophysis to render the file as a jpg.  </p><p> Putting this all together, the filename of the first flame to be rendered will be 'C:\renders\000000.jpg</p><p> Finally, the next line, Render; tells Apophysis to actually render the blasted flame.  
+These two lines are currently commented out.  This is because you can run this script one of two ways:  You can run it to render the fractal, or you can run it to preview the animation.  If you just want to preview the animation to make sure you've got your animation correct, comment these two lines out, set Flame.SampleDensity equal to 1, and press play.  If you actually want to render stuff, make sure these line are NOT commented out, and that Flame.SampleDensity is set to 300.  
+</p><code class="code"><pre class="screen">preview; </pre></code><p> This line makes the current fractal show up in the preview window.  If you are running the script in preview mode, make sure this line is not commented out.  If you are running the script in render mode, it is a good idea to comment this line out, so that Apophysis does not waste time rendering a high-quality image for the preview window.  If you forget to do this, your render will probably take twice as long.  </p><code class="code"><pre class="screen"> print ('image j' +FloatToStr(j)) //This prints out a message into the editor.  </pre></code><p>This prints a status message to the script editor.  In this case, a message image j0 shows up in the script editor every time an image is rendered.   </p><p>And that is it for the stuff inside the for loop!  Whew! </p><p> There is one final line.  </p><code class="code">
+<pre class="screen"> 
+{This tells Apophysis not to change the parameters of the flame you are using.  
+in essence, if you want to render the animation of the fractal but you don't want
+your original parameter set to change at the end, you put in this bit of code:  }  
+UpdateFlame := False; 
+</pre>
+</code><p> This makes sure that running this script does not change your original parameters.  </p><p> All right!  We have successfully written an animation script!  This script renders a sequence of images and stores them in a file.  You can now use another program like Flash or Windows Moviemaker to make a movie out of it.  Yay!</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch11s02.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch11.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch12.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Your First Script </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 12. Apophysis, Fractals, and Copyright FAQ</td></tr></table></div></body></html>

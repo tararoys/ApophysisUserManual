@@ -1,0 +1,60 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Chapter 11. Scripting and Animation</title><link rel="stylesheet" href="apousermanual.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.html" title="Apophysis User Manual"><link rel="up" href="index.html" title="Apophysis User Manual"><link rel="prev" href="ch10s03.html" title="Editing Gradients By Hand"><link rel="next" href="ch11s02.html" title="Your First Script"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 11. Scripting and Animation</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch10s03.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ch11s02.html">Next</a></td></tr></table><hr></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="scripts"></a>Chapter 11. Scripting and Animation</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="ch11.html#id2812859">Introduction and Setup</a></span></dt><dt><span class="section"><a href="ch11s02.html">Your First Script</a></span></dt><dt><span class="section"><a href="ch11s03.html">Advanced Animation</a></span></dt></dl></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id2812859"></a>Introduction and Setup</h2></div></div></div><p> 
+</p><div class="mediaobject"><img src="scripts/images/Clocks.jpg"></div><p>
+</p><p>So.  Anyway.  Scripting, and fractal animation! Here is a link to a youtube video that shows how we're going to animate the fractal.  <a class="ulink" href="http://www.youtube.com/watch?v=Coi9OA0c_xM" target="_top"> Go to the Youtube Video</a> </p><p>First, I am going to show you a really simple way of copying and pasting fractals.   </p><p> The following text is called a parameter set.  This is a text file that stores all of the information that Apophysis needs to make a fractal flame.  So, copy everything between the <code class="code"> &lt; flame  &gt; /flame &gt;</code> brackets.  </p><code class="code"> <pre class="screen">
+
+&lt;flame name="fractal clock" version="Apophysis 2.05 Z+ beta 2" size="1114 857" center="0.0014992566832967 -0.938678407860407" scale="199.46374246004" oversample="1" filter="0.5" quality="50" background="0 0 0" brightness="4" gamma="4" &gt; 
+ 
+   &lt;xform weight="0.5" color="0" linear="1" coefs="1 -0.000996 0.000996 1 0 0" /&gt;
+ 
+   &lt;xform weight="0.5" color="1" julian="0.75" coefs="-0.56010480678899 0.354083476855177 -0.354083476855177 -0.56010480678899 0 0" julian_power="12" julian_dist="1" /&gt; 
+ 
+   &lt;xform weight="0.5" color="0" linear="1" coefs="-0.739001 -0.009553 -0.009553 0.739001 0 -1.35" /&gt;
+ 
+   &lt;xform weight="0.5" color="0" linear="1" coefs="0.0626775838602548 0.108561240258394 0.108561240258394 -0.0626775838602548 0 0" /&gt; 
+ 
+   &lt;xform weight="0.5" color="0" linear="1" coefs="-0.0873713300790295 0.089891321033914 0.089891321033914 0.0873713300790295 0 0"/&gt; 
+ 
+   &lt;palette count="256" format="RGB"&gt;
+ 
+      3BAFAE20A3AD2EABAD3DB4AE75B59FAEB691A59C629C8333
+      E0612CCD3B3BBA164BB40E54AE065EB21C6EB6327EB13C95
+      AC47AD5F6AB94959B23448AB412F7C4F164D522A57563E62
+      14678F1261A0115BB20B52B30549B40B41AC113AA41A2D8C
+      3033A62F42A84E5DB06D78B88F71B8B26BB9A04EAE8F32A4
+      5A3698434AA32C5FAE1F8AA312B5980DC59408D590279082
+      3D677F3251BB2C6FD2268DEA2A88E82E84E72C77D02B6ABA
+      1061BA1654B51D48B12351B42A5BB72D60B33066B0366AB5
+      2969B30C6ECF226CCC386AC94B72CD5F7AD19387C7B397C0
+      AE93BE926AC47741CA6733CA5825CA5819C6580DC26006C7
+      4E07CD6117CC7015DB8013EA930BEDA603F0BD08F7A820E4
+      8745C37454C36164C36256C26448C15135AC4435AA3829A8
+      3234BB3255C9214FBF104AB5183CB5202EB52D239D3729B0
+      3372B92D88B9289EBA3092B33886AD4D5BC4434BAE313EC0
+      2133C54B0CF14F15F3531EF56736F26B16C96A17B16E086E
+      870660AD0559D40553D70554DB0656D30A4EC9165ACB1979
+      DE3473CE5487BF6392B0739DB089C29D7DBC8252B6752E94
+      41046B680A5990114896114B9D114E87386579207274187D
+      69299B6733A2583BA64A43AB3451B53857C32841B7254FB1
+      2256DE285FE92F68F54560EF4C34C84E12CA5D13C26D18BE
+      8618D3BD0F94B01084A41275821A93891EA26D24BB723ECF
+      7050CF6F4AC96F45C37D43BCA760BEB164CAA169CAAA70BD
+      BD60A79C3874AA1454A80560AC106392177F73288F693796
+      4130B2382DBD2F2BC83411CF4617C74521BF5317B5390897
+      38128B56168E5634A2301FA91209BA1213CD1112C21621B7
+      1C38BD0F3CBB0143B30D1E8631218E5C1E819E1E7FC95586
+      DC9169E3A653E1A35AB0ABAF85B8995A8CBD3A92C4397BD1
+      3A59C51E5FBB1E5BB6203DBF0E4BC81A49FB0E1AEA2E3ACE
+      5260CB5666C83D93B445A6B64995AF538AC07F74C09D65C8
+      865BCE7E65CD6667C45C75C57284C6879DC6629E9F3CA789
+      61868E71469F904F3DDA713AEA7F21DA7C3CCF8F37D99F3C
+      E4944DC14672B21F6F9551828877705BC36C4AE6850DCA86 
+ 
+   &lt;/palette&gt;
+ 
+&lt;/flame&gt;
+</pre>
+</code><p>
+  
+ Got it copied?  Good.  Now, click on the main apophysis window, and either hit Ctrl-v, or go to the edit menu and hit paste.  A flame will show up in your editor, like this:  </p><p> 
+</p><div class="mediaobject"><img src="scripts/images/mainwindow.jpg"></div><p>
+</p><p> Congratulations!  You just pasted a flame!  Now, we're ready to start scripting.  </p><p>I call this particular flame "The Fractal Clock," and I'm going to teach you how to animate it, because I think animating it is cool.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch10s03.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ch11s02.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Editing Gradients By Hand </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Your First Script</td></tr></table></div></body></html>

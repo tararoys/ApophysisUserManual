@@ -1,0 +1,42 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>What is a Variation?</title><link rel="stylesheet" href="apousermanual.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.html" title="Apophysis User Manual"><link rel="up" href="ch07.html" title="Chapter 7. How to Design Your Own Fractals Part II: An Introduction To Variations"><link rel="prev" href="ch07.html" title="Chapter 7. How to Design Your Own Fractals Part II: An Introduction To Variations"><link rel="next" href="ch07s03.html" title="Combining Variations with MRCM"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">What is a Variation?</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch07.html">Prev</a> </td><th width="60%" align="center">Chapter 7. How to Design Your Own Fractals Part II:   An Introduction To Variations</th><td width="20%" align="right"> <a accesskey="n" href="ch07s03.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id2806139"></a>What is a Variation?</h2></div></div></div><p>
+Remember how
+in the last chapter,
+ we discussed the five ways to move the transform?  Rotation, translation, skew, scale, and reflection? We played with linear fractals in order to get a feel for what all of these things do.  Linear fractals are the default variation- essentially, they are the same as having no variations at all.  Without the variations, we were able to see exactly what the rotations and other assorted things do to the fractal. </p><p>
+What happens when we add variations?  Variations are simply another step in making an apophysis fractal.  The first step, as we learned, was to move the transforms around.   Apophysis notes where the transforms were moved to.  Using these movements, the Apophysis calculates where the triangles will go during each step of MRCM. </p><p>
+So what does it calculate next?  Why, variations, of course!  After the transforms are moved, but before the next step of MRCM is run, the variations are added.  You can think of variations as a equation that mutates your fractal.  Confused yet?  I won't actually go into the equations themselves, but I will use pretty pictures to illustrate my point.  </p><p>
+Below is a grid.   Apophysis fractals are drawn on grids like these.   See?  The grid has a reference triangle.  </p><p>
+
+</p><div class="mediaobject"><img src="variations/images/grid.jpg"></div><p>
+
+</p><p>
+When you transform the triangle, the grid distorts.  For example, when you move the triangle, the grid moves with it.  When you skew the triangle, the grid skews too.  When you rotate the triangle, the grid rotates too.  </p><p>
+
+</p><div class="mediaobject"><img src="variations/images/grid.jpg"></div><p>
+
+
+</p><div class="mediaobject"><img src="variations/images/grid1.jpg"></div><p>
+
+
+</p><div class="mediaobject"><img src="variations/images/grid2.jpg"></div><p>
+
+</p><p>
+You can actually see this in action in Apophysis.  See this eye icon in the transform editor?  
+</p><div class="mediaobject"><img src="variations/images/eye.jpg"></div><p>
+
+ Click it, and a grid will appear that corresponds to the transform you have selected.  </p><p>
+
+</p><div class="mediaobject"><img src="variations/images/transform.jpg"></div><p>
+
+
+</p><div class="mediaobject"><img src="variations/images/transformgrid.jpg"></div><p>
+
+</p><p>
+So.  Onward to variations. What do variations do?  Well, they run an equation on your grid.  For example, putting a variation on the grid will run every point on that grid through an equation. Depending on the equation, this will distort the grid. What does this mean for your fractal?  Well, your fractal is drawn on this grid.  When the grid is distorted, your fractal will be distorted too.  Let me show you an example of a distorted grid.  On the left is a triangle with a linear variation- in other words, it has no variation.  On the right is a triangle with a swirl variation.  </p><p>
+
+<span class="inlinemediaobject"><img src="variations/images/transformgrid.jpg"></span>
+
+
+<span class="inlinemediaobject"><img src="variations/images/transformgridvariation.jpg"></span>
+
+</p><p>
+In essence, variations give you a distorted grid on which to draw your fractal. So, let's put this all together with the stuff we learned before from MRCM.  </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch07.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch07.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch07s03.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 7. How to Design Your Own Fractals Part II:   An Introduction To Variations </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Combining Variations with MRCM</td></tr></table></div></body></html>

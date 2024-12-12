@@ -1,0 +1,39 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Editing Gradients By Hand</title><link rel="stylesheet" href="apousermanual.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.html" title="Apophysis User Manual"><link rel="up" href="ch10.html" title="Chapter 10.  Making Gradients"><link rel="prev" href="ch10s02.html" title="Using Apomap"><link rel="next" href="ch11.html" title="Chapter 11. Scripting and Animation"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Editing Gradients By Hand</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch10s02.html">Prev</a> </td><th width="60%" align="center">Chapter 10. 
+Making Gradients</th><td width="20%" align="right"> <a accesskey="n" href="ch11.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id2811011"></a>Editing Gradients By Hand</h2></div></div></div><p>
+I actually hardly ever use Apomap.  It's a convenient way to edit gradients.  However, being the gigantic nerd and computer snob that I am, I prefer to edit my gradients by hand. How do you do this, you might ask?  Fear not!  I shall explain all.  </p><p>
+ First, you need to know how to copy and paste parameters from apophysis.  If not, go back and review the <a class="ulink" href="https://netfiles.uiuc.edu/troys2/www/tutorials/parameters.xhtml?uniq=-hip54y" target="_top">
+  parameters tutorial </a>
+ </p><p>
+&lt;flame name="Apophysis-070214-31" version="Apophysis 2.05 Z+ beta 2" size="677 459" center="-0.704471461940557 -0.018337095156312" scale="39.8235294117647" oversample="1" filter="0.2" quality="5" background="0 0 0" brightness="4" gamma="4" &gt; 
+&lt;xform weight="0.5" color="0" linear="1" coefs="1 0 0 1 0 0" /&gt;  
+&lt;xform weight="0.5" color="1" linear="1" coefs="1 0 0 1 0 0" /&gt; 
+&lt;palette count="256" format="RGB"&gt;A18137A08239A0843A9F853C9F863E9E88409E89419D8B439C8C459C8D469B8F489B904A9A914B9A934D99944F999551989752979854979A56969B57969C59959E5B959F5D94A05E93A26093A36292A46392A66591A76791A96890AA6A8FAB6C8FAD6E8EAE6F8EAF718DB1738DB2748CB3768CB5788BB67A8AB87B8AB97D89BA7F89BC8088BD8288BE8487C08586C18786C38985C48B85C58C84C78E84C89083C99183CB9382CC9581CD9781CF9880D09A80D29C7FD39D7FD49F7ED6A17DD7A27DD8A47CDAA67CDBA87BDCA97BDEAB7ADFAD79E1AE79E2B078E3B278E5B477E6B577E7B776E9B976EABA75EBBC74EDBE74EEBF73F0C173F1C372F2C572F4C671F5C872F3C772F1C673EFC573EDC474EAC374E8C275E6C176E4C076E2BF77E0BE77DEBD78DCBC78DABB79D8BA79D5B97AD3B87BD1B77BCFB67CCDB57CCBB47DC9B37DC7B27EC5B17FC2B07FC0AF80BEAE80BCAD81BAAC81B8AB82B6AA83B4A983B2A884B0A784ADA685ABA585A9A486A7A386A5A287A3A188A1A0889F9F899D9E899A9D8A989C8A969B8B949A8C92998C90988D8E978D8C968E8A958E87948F85938F8392908191917F90917D8F927B8E92798D93778C93758B94728A957089956E88966C87966A86976885976684986483996282995F819A5D809A5B7F9B597E9B577D9C557C9C537B9D517A9E4F799E4D789F4A779F4876A04675A04474A142739F41729D41709B406F9A3F6E983E6C963E6B943D6A923C69903C678F3B668D3A658B396389396287386185375F83375E82365D80355B7E345A7C34597A3358783256773155753154733052712F516F2F506D2E4E6B2D4D6A2C4C682C4B662B49642A48622A476029455F28445D27435B274159264057253F55253D53243C52233B50223A4E22384C21374A2036482034461F33451E32431D30411D2F3F1C2E3D1B2C3B1B2B3A1A2A3819293618273418263217253016232E16222D15212B141F29131E27131D25121C23111A2210192010181E0F161C0E151A0E14180D12160C11150B10130B0E110A0D0F090C0D090B0B08090A0708080607060605040504&lt;/palette&gt;&lt;/flame&gt;
+</p><p>
+ So.  Copy and paste a set of parameters into a program like notepad or Microsoft Word.  The huge block of seemingly random letters and numbers is  the gradient of the fractal in hexadecimal code.  What,  exactly, is hexadecimal code?  Glad you asked!  Hexadecimal code is a way of representing a specific color as a series of letters and numbers.  Computer colors are made using by mixing red, green and blue light together in different amounts, and different hexadecimal numbers correspond to different amounts of color.</p><p>
+With that in mind, let's go back to hexadecimal code.  One color in hexadecimal is six characters long.   The first two characters correspond to the amount of red in the color.  The next two characters correspond to the amount of blue in the color.  The final two characters correspond to the amount to green in the character.  These amounts are combined together to form specific colors.  </p><p>
+FF
+33
+AF
+ </p><p>
+  So, what exactly does it mean to have FF amount of red in your color?  Well, the thing is there are only 10 numbers in the normal counting system.  Programmers wanted 256 different amounts of color for each of the three primary colors.  However, to do this with the numbers 0 through nine, they would have had to represent the colors like this:  </p><p>
+  
+125
+
+094
+
+174
+ </p><p>
+   However, the people who programmed colors decided that using nine characters to express one color was too much.  Thus, they added the letters A through F to correspond to the numbers 10 though 15. The technical term for this is a base-16 number system, but you don't really need to know that.  All you need to know is that the numbers work like an ordinary number system, in that F2 is bigger than A1, and FF is the biggest number, while 00 is the smallest number.  Thus, all of the colors can be represented with 6 characters.</p><p>
+ If you have a larger number, you have more of that color.  So, for example, the hexadecimal number 
+FF
+
+00
+
+aa
+ has a lot of red, no green, and about half as much blue as it has red.  Thus, it makes a bright  maroonish purple color.  There are several websites on line that deal with hexadecimal color- just type in 'hexadecimal color code' into any search engine for more information.</p><p>
+So what does this all have to do with the gradient?  if you look at an apophysis gradient, you will notice that it is composed of lots of little bands of color.  In that large block of code in the parameters, every six characters correspond to one of those little bands of color.</p><p>
+So, how do you edit the gradient by hand?  Simple.  Use a hexadecimal website like <a class="ulink" href="http://www.december.com/html/spec/color.html" target="_top">
+ the Hex Hub </a>
+ to look up the hex code of the color you want, or make an educated guess as to the color you want.  Then, delete a block of six hex characters, and type in the hex code of the color that you want.  </p><p>
+ One thing to keep in mind is that you can't choose any random block of hexadecimal code and replace it.  You have to replace six characters at specific positions in the gradient.  For example, if you replace the first six characters with your hexadecimal color, the first stripe on the gradient will turn that color.  But if you skip, say, the first three characters in the gradient and attempt to paste your hexadecimal color over characters 4 through 9, you will come up with some very odd results, because the hexadecimal code was not pasted into the right location.</p><p>
+Anyway, that is how to edit your gradients by hand.  And that also concludes this tutorial.  So, until next time, have fun!  </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch10s02.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch10.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch11.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Using Apomap </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 11. Scripting and Animation</td></tr></table></div></body></html>

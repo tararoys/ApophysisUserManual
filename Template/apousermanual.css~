@@ -1,0 +1,64 @@
+
+body{background:black}
+
+h1, h2, h3, h4, h5, h6{
+	color:#aaaaaa
+}
+th{
+	color:#FFFFFF;
+	}
+a:link{
+	color:#bbbbbb;
+	text-decoration: none;
+}
+a:visited{
+	color:#888888;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+
+
+p {color:#999999}
+
+
+div.navheader{
+}
+
+div.section{
+	border-left-style: solid;
+	border-left-width: medium;
+	border-left-color: #222222;
+	padding: 2%;
+	margin: auto;
+	min-width: 400px;
+	max-width: 600px;
+	background:#111111;
+}
+
+div.section div.section{
+	border-left-color: #333333;
+	min-width: 380px;
+	max-width: 580px;
+	background: #222222;
+}
+
+div.section div.section div.section{
+	border-left-color: #444444;
+	min-width: 360px;
+	max-width: 560px;
+	background: #333333;
+}
+div.section div.section div.section div.section{
+	border-left-color:#555555;
+	min-width: 340px;
+	max-width: 540px;
+	background: #444444;
+}
+pre.screen{
+	color:#FFFFFF;
+}
+code.code{
+	color:#FFFFFF;
+}

@@ -1,0 +1,49 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Making a Heart with Post Transforms</title><link rel="stylesheet" href="apousermanual.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.html" title="Apophysis User Manual"><link rel="up" href="ch09.html" title="Chapter 9.  Final Transforms"><link rel="prev" href="ch09s03.html" title="How Variables Work"><link rel="next" href="ch10.html" title="Chapter 10.  Making Gradients"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Making a Heart with Post Transforms
+</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch09s03.html">Prev</a> </td><th width="60%" align="center">Chapter 9. 
+Final Transforms</th><td width="20%" align="right"> <a accesskey="n" href="ch10.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id2809210"></a>Making a Heart with Post Transforms
+</h2></div></div></div><p>
+  I will demonstrate one of the more fun things you can do with the final transform.  Copy and paste these parameters into you're Apophysis.  </p><p>
+&lt;flame name="heartfinal transform tutorial" version="Apophysis 2.05 Z+ beta 2" size="1280 1024" center="-0.00116548688040419 -1.40081723538404" scale="844.321613475266" oversample="1" filter="0.5" quality="50" background="0 0 0" brightness="4" gamma="4" &gt;
+&lt;xform weight="0.5" color="0" linear="1" coefs="0.695818 0.437943 -0.374787 0.583146 0 0" /&gt; 
+&lt;xform weight="0.5" color="1" linear="1" coefs="0.709926 -0.040154 0.040154 0.709926 0.442781 -0.535829" /&gt;
+&lt;finalxform color="0" symmetry="1" juliascope="1" coefs="-0.632299 -0.774725 0.774725 -0.632299 -1.228555 -0.335455" juliascope_power="2" juliascope_dist="1" /&gt; 
+&lt;palette count="256" format="RGB"&gt;   
+325E4E335F5134605535615836625B37635F376462386565   
+3966693A676C3B686F3C69723D6A763E6B793F6C7C406D80  
+406E83416F8642708A43718D44729045739446749747759A    
+48769E4977A14978A44A79A74B7AAB4C7BAE4D7CB14E7DB5      
+4F7EB8507FBB5180BF5281C25282C55383C95484CC5585CF      
+5686D35787D65888D95989DC5A8AE05B8BE35B8CE65C8DEA     
+5D8EED5E8FF05F90F46091F75E93F55C95F35B97F05999EE 
+579BEC559DEA549FE852A1E650A3E34EA5E14CA7DF4BA9DD 
+49ABDB47ADD945AFD643B1D442B3D240B5D03EB7CE3CB9CB 
+3BBBC939BDC737BFC535C1C333C3C132C5BE30C7BC2EC9BA 
+2CCBB82ACDB629CFB427D1B125D3AF23D5AD22D7AB20D9A9  
+1EDBA61CDDA41ADFA219E1A017E39E15E59C13E79911E997     
+10EB950EED930CEF910AF18F09F38C07F58A05F78809F489   
+0CF28A10EF8A13ED8B17EA8C1AE88D1EE58E21E38E25E08F 
+28DE902CDB9130D89233D69237D3933AD1943ECE9541CC96    
+45C99648C7974CC49850C19953BF9A57BC9A5ABA9B5EB79C  
+61B59D65B29E68B09F6CAD9F6FABA073A8A177A5A27AA3A3  
+7EA0A3819EA4859BA58899A68C96A78F94A79391A8978EA9
+9A8CAA9E89ABA187ABA584ACA882ADAC7FAEAF7DAFB37AAF   
+B678B0BA75B1B775AFB474ADB174ABAE74A9AB73A7A873A5
+A573A2A272A09F729E9C719C99719A967198937096907094  
+8D70928A6F90876F8E846F8C816E8A7E6E877B6E85786D83      
+756D81726D7F6F6C7D6D6C7B6A6B79676B77646B75616A73 
+5E6A715B6A6E58696C55696A5269684F68664C6864496862 
+46676043675E40675C3D665A3A6658376556346553316551
+2E644F2B644D28644B256349226347226247226247236146 
+236046236046235F46245E45245E45245D45245D45255C44 
+255B44255B44255A44265943265943265843265743265743 
+275642275542275542275442285341285341285241285241 
+295140295040295040294F402A4E3F2A4E3F2A4D3F2A4C3F 
+2A4C3F2B4B3E2B4A3E2B4A3E2B493E2C483D2C483D2C473D 
+2C473D2D463C2D453C2D453C2D443C2E433B2E433B2E423B 
+&lt;/palette&gt;&lt;/flame&gt;
+</p><p>
+  This flame consists of two linear transforms and a final transform with a juliascope variation on it.  Under variables, the juliascope is set to two.  This, essentially, kind of mirrors the fractal over the x axis, and lets you create awesome things like fractal hearts. </p><p>
+</p><div class="mediaobject"><img src="finaltransforms/images/heart.jpg"></div><p>
+</p><p>
+ And that is that for final transforms.  Congratulations!  You now know all of the basics of Apophysis! Huzzah!  Consider yourself graduated from Apophysis 101, and feel free to move on to the advanced tutorials.  Until next time, have fun!</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch09s03.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch09.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch10.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">How Variables Work </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 10. 
+Making Gradients</td></tr></table></div></body></html>

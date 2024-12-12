@@ -1,0 +1,76 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Chapter 3. How Fractals are Made: An Introduction to MRCM</title><link rel="stylesheet" href="apousermanual.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.html" title="Apophysis User Manual"><link rel="up" href="index.html" title="Apophysis User Manual"><link rel="prev" href="ch02s11.html" title="Rendering"><link rel="next" href="ch03s02.html" title="Barnsley's Fern"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 3. How Fractals are Made: An Introduction to
+MRCM</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch02s11.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ch03s02.html">Next</a></td></tr></table><hr></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="mrcmintro"></a>Chapter 3. How Fractals are Made: An Introduction to
+MRCM</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="ch03.html#id2799641">Sierpinski's triangle</a></span></dt><dt><span class="section"><a href="ch03s02.html">Barnsley's Fern</a></span></dt></dl></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id2799641"></a>Sierpinski's triangle</h2></div></div></div><div class="mediaobject"><img src="mrcmintro/images/triangle5.jpg"></div><div class="mediaobject"><img src="mrcmintro/images/btriangle5.jpg"></div><p>This tutorial is a more in-depth explanation
+of the Apophysis transform editor.</p><p>
+</p><div class="mediaobject"><img src="mrcmintro/images/transformeditor.jpg"></div><p>When most people look at the Apophysis
+transform editor, their first thought is this: Triangles? What the
+heck? Rest assured, ladies and gentlemen, I shall explain the
+triangles, and why they are there.</p><p>But first, let's look at Sierpinski triangle!
+Sierpinski was a mathematician that came up with one of the first
+fractals. It is an example of an iterated function system, and of a
+Multiple Reduction Copy Machine, or MRCM. What, you might ask, is
+an iterated function system (IFS), and an MRCM? Well, and MRCM
+makes IFS. Confused yet? Let me explain!</p><div class="mediaobject"><img src="mrcmintro/images/triangle.jpg"></div><p>Start with a right triangle that looks like
+the above triangle. This is the first step- it is also called the
+first iteration triangle. Iteration, by the way, means to go step
+by step.</p><div class="mediaobject"><img src="mrcmintro/images/triangle2.jpg"></div><p>Imagine that you photocopied this triangle.
+This photocopier is a very special photocopier. Instead of making a
+single copy, it shrinks the triangle and makes three copies of
+them, positioned inside the original triangle like so. This
+photocopier is called a Multiple Reduction Copy Machine- it makes multiple copies, changes their positions in relation to the
+original triangle, and reduces their size. Below are the second
+iteration triangles.</p><div class="mediaobject"><img src="mrcmintro/images/triangle3.jpg"></div><p>So what happens if you run these three
+triangles back through the copy machine? It splits each triangle
+into three additional triangles, like the above picture. These are
+third iteration triangles. Note that the third iteration triangles
+are in the same position in relation to the second iteration
+triangles as the second iteration triangles are to the first
+iteration triangle.</p><p>
+</p><div class="mediaobject"><img src="mrcmintro/images/triangle3a.jpg"></div><p>
+
+
+</p><div class="mediaobject"><img src="mrcmintro/images/triangle4.jpg"></div><p>
+
+</p><div class="mediaobject"><img src="mrcmintro/images/triangle5.jpg"></div><p>What if we run the MRCM several times? Say,
+twenty? Thirty? Infinitely? We end up with some called Sierpinski
+triangle, which looks like the above picture.</p><p>So what does this have to do with
+Apophysis's transform editor? Everything! See, Apophysis's
+transform editor shows the first two iterations of an MRCM. The
+fractal that you see on the screen is what those triangles look
+like after, say, 20 or 30 iterations.</p><p></p><p>So, let us make Sierpinski triangle in
+Apophysis!</p><div class="mediaobject"><img src="mrcmintro/images/options.jpg"></div><p>Open up Apophysis. Click on the options
+button. </p><div class="mediaobject"><img src="mrcmintro/images/optionsbutton.jpg"></div><p> A window that looks like the picture above will
+appear. Click on the Random tab. Set the number of transforms to a
+minimum of three and a maximum of three.</p><div class="mediaobject"><img src="mrcmintro/images/options2.jpg"></div><p>Click on the variations tab. Click clear
+all, and then check linear. Close the options window.</p><div class="mediaobject"><img src="mrcmintro/images/file.jpg"></div><p>In the main window, go to file, and click
+Random batch.</p><p>Chose a random fractal. All of this sets up
+the transform editor so that you will be working with the right
+number of transforms.</p><p></p><p>now we actually get to make Sierpinski's
+triangle.</p><div class="mediaobject"><img src="mrcmintro/images/transformeditor.jpg"></div><p> </p><div class="mediaobject"><img src="mrcmintro/images/transformeditor6.jpg"></div><p>Open the transform editor. You will see four
+triangles. One of them is stationary. It is the base triangle. In
+our MRCM up top, it would be the first iteration triangle. It does
+not move. The other three, you can click on and move. These are the
+second iteration triangles. We call these triangles transforms.
+Select the first transform, and click on the transform tab. Change
+the weight to .5. Now, select the second transform and change the
+weight to .5. Do the same with the third transform. Got that?
+Good!</p><div class="mediaobject"><img src="mrcmintro/images/transformeditor3.jpg"></div><p>Now, remember our MRCM at the top? Good.
+Arrange the transforms inside the base triangle in the same way the
+second iteration triangles are arranged in the first iteration
+triangle.</p><p></p><div class="mediaobject"><img src="mrcmintro/images/transform1.jpg"></div><div class="mediaobject"><img src="mrcmintro/images/transform2.jpg"></div><div class="mediaobject"><img src="mrcmintro/images/transform3.jpg"></div><p>You can do this by moving triangles around
+or by typing the coordinates in to the triangle tab of the editors.
+The coordinates are shown above.</p><div class="mediaobject"><img src="mrcmintro/images/triangle5.jpg"></div><p>Congrats! You've just made
+Sierpinski triangle.</p><p></p><p>So what does this tell us about the
+transform editor? The Apophysis Transform editor is not a bunch of
+random triangles that do cool things. No: these triangles show the
+first two steps in an iterated function system. By moving the
+triangles around, you are telling how the MRCM is going to copy the
+next iteration of triangles.</p><p>Sierpinski triangle is a good example of how
+iterated function systems work, because it is a very simple fractal
+to make. It is also easy to visualize Sierpinski triangle as
+it goes through each iteration, and the last step seems like a
+logical extension of the first three triangles. This is because all
+we changed was the position and the size of the
+triangles.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch02s11.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ch03s02.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">
+ Rendering
+ </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Barnsley's Fern</td></tr></table></div></body></html>
